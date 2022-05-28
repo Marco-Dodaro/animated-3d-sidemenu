@@ -1,5 +1,5 @@
 # animated-3d-sidemenu
 
-Animated side menu for desktop version only
+Animated side menu
 
 Live version: https://marco-dodaro.github.io/animated-3d-sidemenu/
