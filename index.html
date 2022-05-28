@@ -7,19 +7,57 @@
     <title>Animated 3D SideMenu</title>
   </head>
   <body>
+
     <nav>
-      Navbar
+      <label>
+        <input class="checkbox" type="checkbox" onclick="openNav()">
+        <div class="toggle">
+          <span class="topLine common"></span>
+          <span class="middleLine common"></span>
+          <span class="bottomLine common"></span>
+        </div>
+      </label>
     </nav>
 
     <div class="contentWrapper">
 
-    <ul>
-      <li style="--i:4"><a href="#">Home</a></li>
-      <li style="--i:3"><a href="#">Portfolio</a></li>
-      <li style="--i:2"><a href="#">About</a></li>
-      <li style="--i:1"><a href="#">Contact</a></li>
-    </ul>
+        <ul class="slide">
+          <li style="--i:4"><a href="#">Home</a></li>
+          <li style="--i:3"><a href="#">Portfolio</a></li>
+          <li style="--i:2"><a href="#">About</a></li>
+          <li style="--i:1"><a href="#">Contact</a></li>
+        </ul>
+
+
 
     </div>
+
+
+    <script>
+      let check = document.querySelector(".checkbox");
+
+      function openNav() {
+        document.querySelector(".slide").style.transform = "skewY(-15deg) translateX(0px)";
+        check.setAttribute('onclick','closeNav()');
+      }
+
+      function closeNav() {
+        document.querySelector(".slide").style.transform = "skewY(-15deg) translateX(-240px)";
+        check.setAttribute('onclick','openNav()');
+      }
+    </script>
   </body>
 </html>
+
+
+<!-- <script>
+  let check = document.querySelector(".checkbox");
+
+  function openCloseNav() {
+    if(check.checked = true) {
+      document.querySelector(".slide").style.transform = "skewY(-15deg) translateX(0px)";
+    } else {
+      document.querySelector(".slide").style.transform = "skewY(-15deg) translateX(-240px)";
+    }
+  }
+</script> -->

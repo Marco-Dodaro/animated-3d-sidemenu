@@ -1,0 +1,56 @@
+.toggle {
+  position: absolute;
+  height: 40px;
+  top: 5px;
+  width: 40px;
+  z-index: 1;
+  background-color: #f0f0f0;
+  cursor: pointer;
+  border-radius: 2px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.toggle .common {
+  position: absolute;
+  height: 2px;
+  width: 20px;
+  background-color: #2b8fba;
+  border-radius: 50px;
+  transition: 0.3s ease;
+}
+
+.toggle .topLine {
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.toggle .middleLine {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.toggle .bottomLine {
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+input:checked ~ .toggle .topLine {
+  left: 7px;
+  top: 20px;
+  width: 25px;
+  transform: rotate(45deg);
+}
+
+input:checked ~ .toggle .middleLine {
+opacity: 0;
+}
+
+input:checked ~ .toggle .bottomLine {
+  left: 7px;
+  top: 20px;
+  width: 25px;
+  transform: rotate(-45deg);
+}

@@ -19,6 +19,12 @@ nav {
   background: #f0f0f0;
 }
 
+input {
+  display: none;
+  visibility: hidden;
+  -webkit-appearance: none;
+}
+
 .contentWrapper {
   display: flex;
   justify-content: flex-start;
@@ -28,61 +34,5 @@ nav {
   background: #292929;
 }
 
-ul {
-  position: relative;
-  transform: skewY(-15deg);
-}
-
-ul li {
-  position: relative;
-  list-style: none;
-  width: 200px;
-  background: #2b8fba;
-  padding: 20px;
-  z-index: var(--i);
-  transition: 0.5s;
-}
-
-ul li:hover {
-  background: white;
-}
-
-ul li:before {
-  content:'';
-  position: absolute;
-  top: 0;
-  left: -40px;
-  width: 40px;
-  height: 100%;
-  background: #217599;
-  transform-origin: right;
-  transform: skewY(45deg);
-  transition: 0.5s;
-}
-
-ul li:after {
-  content:'';
-  position: absolute;
-  top: -40px;
-  left: 0;
-  width: 100%;
-  height: 40px;
-  background: #217599;
-  transform-origin: bottom;
-  transform: skewX(45deg);
-  transition: 0.5s;
-}
-
-
-ul li a {
-  text-decoration: none;
-  color: white;
-  display: block;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  transition: 0.5s;
-}
-
-ul li:hover a {
-  color: #217599;
-}
+@import"scss/_sideMenu.scss";
+@import"scss/_openCloseMenu.scss";

@@ -18,6 +18,12 @@ nav {
   background: #f0f0f0;
 }
 
+input {
+  display: none;
+  visibility: hidden;
+  -webkit-appearance: none;
+}
+
 .contentWrapper {
   display: flex;
   justify-content: flex-start;
@@ -27,9 +33,10 @@ nav {
   background: #292929;
 }
 
-ul {
+.slide {
   position: relative;
-  transform: skewY(-15deg);
+  transition: 0.5s;
+  transform: skewY(-15deg) translateX(-240px);
 }
 
 ul li {
@@ -44,6 +51,7 @@ ul li {
 
 ul li:hover {
   background: white;
+  transform: translateX(50px);
 }
 
 ul li:before {
@@ -59,6 +67,10 @@ ul li:before {
   transition: 0.5s;
 }
 
+ul li:hover::before {
+  background: white;
+}
+
 ul li:after {
   content: '';
   position: absolute;
@@ -72,6 +84,10 @@ ul li:after {
   transition: 0.5s;
 }
 
+ul li:hover::after {
+  background: white;
+}
+
 ul li a {
   text-decoration: none;
   color: white;
@@ -83,4 +99,61 @@ ul li a {
 
 ul li:hover a {
   color: #217599;
+}
+
+.toggle {
+  position: absolute;
+  height: 40px;
+  top: 5px;
+  width: 40px;
+  z-index: 1;
+  background-color: #f0f0f0;
+  cursor: pointer;
+  border-radius: 2px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.toggle .common {
+  position: absolute;
+  height: 2px;
+  width: 20px;
+  background-color: #2b8fba;
+  border-radius: 50px;
+  transition: 0.3s ease;
+}
+
+.toggle .topLine {
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.toggle .middleLine {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.toggle .bottomLine {
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+input:checked ~ .toggle .topLine {
+  left: 7px;
+  top: 20px;
+  width: 25px;
+  transform: rotate(45deg);
+}
+
+input:checked ~ .toggle .middleLine {
+  opacity: 0;
+}
+
+input:checked ~ .toggle .bottomLine {
+  left: 7px;
+  top: 20px;
+  width: 25px;
+  transform: rotate(-45deg);
 }
